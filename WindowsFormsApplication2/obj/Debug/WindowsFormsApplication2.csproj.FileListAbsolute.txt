@@ -25,3 +25,16 @@ C:\Users\A8-7600k\source\repos\WindowsApp4\WindowsApp4\TRIBESEquipmentInventoryS
 C:\Users\A8-7600k\source\repos\WindowsApp4\WindowsApp4\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.CopyComplete
 C:\Users\A8-7600k\source\repos\WindowsApp4\WindowsApp4\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 C:\Users\A8-7600k\source\repos\WindowsApp4\WindowsApp4\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form2.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.UserControl1.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\bin\Debug\MySql.Data.dll
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\TRIBESEquipmentInventorySub-System\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form3.resources
