@@ -65,8 +65,10 @@ namespace WindowsFormsApplication2
                                 {
                                     MessageBox.Show("Successfully added to database.", "Yep it exist. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                                    NotifyPropertyChanged();
+                                    
+                                    this.Close();
+                                   var a = new UserControl1();
+                                    a.refresh();
                                 }
                             }
                         }
