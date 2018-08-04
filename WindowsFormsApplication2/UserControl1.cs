@@ -25,7 +25,7 @@ namespace WindowsFormsApplication2
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=;"
++ "pwd=root;"
 + "SslMode=none;"
 + "database=db";
 
@@ -94,13 +94,66 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
+        public void refresh()
+        {
+            {
+                MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
+                string myConnectionString;
+                myConnectionString = "server=127.0.0.1;"
+    + "uid=root;"
+    + "pwd=root;"
+    + "SslMode=none;"
+    + "database=db";
+
+                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                using (MySqlConnection con = new MySqlConnection(myConnectionString))
+                {
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks FROM items ", conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                dataGridView1.DataSource = dt;
+                                dataGridView1.ReadOnly = false;
+                                dataGridView1.ClearSelection();
+                                dataGridView1.Columns[2].Visible = false;
+                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[1].HeaderCell.Value = "";
+                                dataGridView1.Columns[1].Width = 50;
+                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                dataGridView1.Columns[0].HeaderCell.Value = "";
+                                dataGridView1.Columns[0].Width = 50;
+                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                dataGridView1.Refresh();
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+            private void UserControl1_Load(object sender, EventArgs e)
         {
             MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=;"
++ "pwd=root;"
 + "SslMode=none;"
 + "database=db";
 
@@ -143,5 +196,21 @@ namespace WindowsFormsApplication2
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var a = new Form2();
+            a.Show();
+
+        
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
+
+    
 }

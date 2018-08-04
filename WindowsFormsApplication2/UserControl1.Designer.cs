@@ -36,9 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,15 +136,6 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(611, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 38);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Column1";
@@ -162,6 +153,16 @@
             this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column2.Text = "Delete";
             this.Column2.UseColumnTextForButtonValue = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(611, 386);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 38);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // UserControl1
             // 
@@ -194,9 +195,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -16,5 +16,10 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
