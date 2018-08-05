@@ -403,19 +403,7 @@ namespace WindowsFormsApplication2
             if (comboBox1.Text.Equals("") && textBox1.Text != "")
             {
 
-                var a1 = "";
-                if (comboBox2.Text.Equals("Damaged Beyond Repair"))
-                {
-                    a1 = "DamagedBeyondRepair";
-                }
-                if (comboBox2.Text.Equals(""))
-                {
-                    a1 = "Deployable";
-                }
-                else
-                {
-                    a1 = comboBox2.Text;
-                }
+
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
                 string myConnectionString;
                 myConnectionString = "server=127.0.0.1;"
