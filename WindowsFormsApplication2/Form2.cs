@@ -10,15 +10,18 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 namespace WindowsFormsApplication2
 {
-    public partial class Form2 : Form , INotifyPropertyChanged
-    {
-        public Form2()
-        {
-            InitializeComponent();
-        }
-        public UserControl1 a;
+ 
 
-        public event PropertyChangedEventHandler PropertyChanged;
+    public partial class Form2 : Form 
+    {
+      
+        public Form2(){
+            InitializeComponent();
+         
+
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,7 +29,7 @@ namespace WindowsFormsApplication2
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=root;"
++ "pwd=;"
 + "SslMode=none;"
 + "database=db";
             conn.ConnectionString = myConnectionString;
@@ -65,10 +68,10 @@ namespace WindowsFormsApplication2
                                 {
                                     MessageBox.Show("Successfully added to database.", "Yep it exist. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    
+
+            
                                     this.Close();
-                                   var a = new UserControl1();
-                                    a.refresh();
+                                    (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).refreshni();
                                 }
                             }
                         }
@@ -78,6 +81,12 @@ namespace WindowsFormsApplication2
 
             }
             conn.Close();
+        }
+    
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
 
    

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using MySql.Data.MySqlClient;
 namespace WindowsFormsApplication2
 {
@@ -18,83 +18,7 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
-        public string b;
-         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
-            string myConnectionString;
-            myConnectionString = "server=127.0.0.1;"
-+ "uid=root;"
-+ "pwd=;"
-+ "SslMode=none;"
-+ "database=db";
-
-            var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
-            {
-                if (e.ColumnIndex == 0)
-                {
-                    
-                    var a = new Form3();
-                    b = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    a.Show();
-                 
-                }
-                if (e.ColumnIndex == 1)
-                {
-                    conn.ConnectionString = myConnectionString;
-                    conn.Open();
-                    using (MySqlConnection con = new MySqlConnection(myConnectionString))
-                    {
-                        using (MySqlCommand cmd = new MySqlCommand("DELETE FROM items WHERE id =" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(), conn))
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            if (cmd.ExecuteNonQuery() > 0 )
-                            {
-                                MessageBox.Show("Deleted", "Yep it's gone ",
-   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-
-                                using (MySqlConnection con1 = new MySqlConnection(myConnectionString))
-                                {
-                                    using (MySql.Data.MySqlClient.MySqlCommand cmd1 = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks FROM items ", conn))
-                                    {
-                                        cmd1.CommandType = CommandType.Text;
-                                        using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd1))
-                                        {
-                                            using (DataTable dt = new DataTable())
-                                            {
-                                                sda.Fill(dt);
-                                                dataGridView1.DataSource = dt;
-                                                dataGridView1.ReadOnly = false;
-                                                dataGridView1.ClearSelection();
-                                                dataGridView1.Columns[2].Visible = false;
-                                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                                dataGridView1.Columns[1].Width = 50;
-                                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                                dataGridView1.Columns[0].Width = 50;
-                                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    conn.Close();
-
-                }
-            }
-        }
+       
 
         public void refresh()
         {
@@ -106,9 +30,9 @@ namespace WindowsFormsApplication2
     + "pwd=;"
     + "SslMode=none;"
     + "database=db";
-
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                var a = new Form1();
+                a.dataGridView1.DefaultCellStyle.SelectionBackColor = a.dataGridView1.DefaultCellStyle.BackColor;
+                a.dataGridView1.DefaultCellStyle.SelectionForeColor = a.dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -121,25 +45,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                             
+                                a.dataGridView1.DataSource = dt;
+                                a.dataGridView1.ReadOnly = false;
+                                a.dataGridView1.ClearSelection();
+                                a.dataGridView1.Columns[2].Visible = false;
+                                a.dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                a.dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                a.dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[1].HeaderCell.Value = "";
+                                a.dataGridView1.Columns[1].Width = 50;
+                                a.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                a.dataGridView1.Columns[0].HeaderCell.Value = "";
+                                a.dataGridView1.Columns[0].Width = 50;
+                                a.dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                a.dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                a.dataGridView1.Refresh();
                             }
                         }
                     }
@@ -153,47 +78,7 @@ namespace WindowsFormsApplication2
       
             private void UserControl1_Load(object sender, EventArgs e)
         {
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
-            string myConnectionString;
-            myConnectionString = "server=127.0.0.1;"
-+ "uid=root;"
-+ "pwd=;"
-+ "SslMode=none;"
-+ "database=db";
-
-            dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
-            conn.ConnectionString = myConnectionString;
-            conn.Open();
-              using (MySqlConnection con = new MySqlConnection(myConnectionString)){
-                  using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks FROM items ", conn)){
-                    cmd.CommandType = CommandType.Text;
-                       using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd)){
-                           using (DataTable dt = new DataTable()){
-                               sda.Fill(dt);
-                               dataGridView1.DataSource = dt;
-                               dataGridView1.ReadOnly = false;
-                               dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-    dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[3].HeaderCell.Value = "Name";
-    dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-    dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[1].HeaderCell.Value = "";
-    dataGridView1.Columns[1].Width = 50;
-    dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-    dataGridView1.Columns[0].HeaderCell.Value = "";
-    dataGridView1.Columns[0].Width = 50;
-    dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                           }
-                       }
-                }
-              }
-
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -217,7 +102,7 @@ namespace WindowsFormsApplication2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            var a = new Form1();
             if (comboBox1.Text.Equals("") && comboBox2.Text.Equals(""))
             {
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
@@ -228,8 +113,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -242,25 +127,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -279,8 +164,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -293,26 +178,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -323,14 +208,14 @@ namespace WindowsFormsApplication2
 
             if (comboBox1.Text.Equals("") && comboBox2.Text!="")
             {
-                var a = "";
+                var a1 = "";
                 if (comboBox2.Text.Equals("Damaged Beyond Repair"))
                 {
-                    a = "DamagedBeyondRepair";
+                    a1 = "DamagedBeyondRepair";
                 }
                 else
                 {
-                    a = comboBox2.Text;
+                    a1 = comboBox2.Text;
                 }
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
                 string myConnectionString;
@@ -340,13 +225,13 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is"+a+" FROM items where items.name like '%" + textBox1.Text + "%' " , conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is"+a1+" FROM items where items.name like '%" + textBox1.Text + "%' " , conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -354,26 +239,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-        
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -384,6 +269,16 @@ namespace WindowsFormsApplication2
 
             if (comboBox2.Text != "" && comboBox1.Text != "" && textBox1.Text!="")
             {
+
+                var a1 = "";
+                if (comboBox2.Text.Equals("Damaged Beyond Repair"))
+                {
+                    a1 = "DamagedBeyondRepair";
+                }
+                else
+                {
+                    a1 = comboBox2.Text;
+                }
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
                 string myConnectionString;
                 myConnectionString = "server=127.0.0.1;"
@@ -392,13 +287,13 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + comboBox2.Text + " FROM items where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1, conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + " FROM items where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -406,26 +301,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
 
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -438,20 +333,20 @@ namespace WindowsFormsApplication2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var a = "";
+            var a1 = "";
             if (comboBox2.Text.Equals("Damaged Beyond Repair"))
             {
-                a = "DamagedBeyondRepair";
+                a1 = "DamagedBeyondRepair";
             }
             if (comboBox2.Text.Equals(""))
             {
-                a = "Deployable";
+                a1 = "Deployable";
             }
             else
             {
-                a = comboBox2.Text;
+                a1 = comboBox2.Text;
             }
-
+            var a = new Form1();
             if (comboBox1.Text.Equals("") && textBox1.Text.Equals(""))
             {
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
@@ -462,14 +357,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + " FROM items  ", conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + " FROM items  ", conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -477,25 +372,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -515,14 +410,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + " FROM items  where items.name like '%" + textBox1.Text + "%' ", conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + " FROM items  where items.name like '%" + textBox1.Text + "%' ", conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -530,25 +425,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -567,14 +462,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + ",items.tagID FROM items  where  items.tagID=" + comboBox1.SelectedIndex + 1, conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + ",items.tagID FROM items  where  items.tagID=" + comboBox1.SelectedIndex + 1, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -582,26 +477,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -622,14 +517,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + ",items.tagID FROM items  where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1 , conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + ",items.tagID FROM items  where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1 , conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -637,26 +532,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -667,16 +562,16 @@ namespace WindowsFormsApplication2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var a = "";
+            var a1 = "";
             if (comboBox2.Text.Equals("Damaged Beyond Repair"))
             {
-                a = "DamagedBeyondRepair";
+                a1 = "DamagedBeyondRepair";
             }
             else
             {
-                a = comboBox2.Text;
+                a1 = comboBox2.Text;
             }
-
+            var a = new Form1();
             if (comboBox2.Text.Equals("") && textBox1.Text.Equals(""))
             {
                 MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
@@ -687,8 +582,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -702,26 +597,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -741,8 +636,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -756,26 +651,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -794,14 +689,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + ",items.tagID FROM items  where  items.tagID=" + comboBox1.SelectedIndex + 1, conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + ",items.tagID FROM items  where  items.tagID=" + comboBox1.SelectedIndex + 1, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -809,26 +704,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -849,14 +744,14 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a + ",items.tagID FROM items  where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1, conn))
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.is" + a1 + ",items.tagID FROM items  where items.name like '%" + textBox1.Text + "%' and items.tagID=" + comboBox1.SelectedIndex + 1, conn))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -864,26 +759,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                dataGridView1.DataSource = dt;
-                                dataGridView1.ReadOnly = false;
-                                dataGridView1.ClearSelection();
-                                dataGridView1.Columns[2].Visible = false;
-                                dataGridView1.Columns[5].Visible = false;
-                                dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[1].HeaderCell.Value = "";
-                                dataGridView1.Columns[1].Width = 50;
-                                dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                dataGridView1.Columns[0].HeaderCell.Value = "";
-                                dataGridView1.Columns[0].Width = 50;
-                                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -898,6 +793,11 @@ namespace WindowsFormsApplication2
             textBox1.Text = "";
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+           
         }
 
        
