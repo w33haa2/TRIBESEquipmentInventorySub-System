@@ -71,6 +71,7 @@
             // 
             this.dep.Location = new System.Drawing.Point(104, 305);
             this.dep.Name = "dep";
+            this.dep.ReadOnly = true;
             this.dep.Size = new System.Drawing.Size(235, 20);
             this.dep.TabIndex = 41;
             // 
@@ -145,6 +146,7 @@
             // 
             this.TextBox4.Location = new System.Drawing.Point(104, 182);
             this.TextBox4.Name = "TextBox4";
+            this.TextBox4.ReadOnly = true;
             this.TextBox4.Size = new System.Drawing.Size(235, 20);
             this.TextBox4.TabIndex = 32;
             // 
@@ -259,6 +261,7 @@
             this.Controls.Add(this.TextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Item Details";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);

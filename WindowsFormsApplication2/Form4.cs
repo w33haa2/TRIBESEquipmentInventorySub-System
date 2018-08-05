@@ -62,7 +62,7 @@ namespace WindowsFormsApplication2
                                     MessageBox.Show("Successfully added to database.", "Yep it exist. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-
+                                    (System.Windows.Forms.Application.OpenForms["Form3"] as Form3).Close();
                                     this.Close();
                                     (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).refreshni();
                                 }
