@@ -12,10 +12,10 @@ namespace WindowsFormsApplication2
 {
  
 
-    public partial class Form2 : Form 
+    public partial class AddUI : Form 
     {
       
-        public Form2(){
+        public AddUI(){
             InitializeComponent();
          
 
@@ -29,7 +29,7 @@ namespace WindowsFormsApplication2
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=;"
++ "pwd=root;"
 + "SslMode=none;"
 + "database=db";
             conn.ConnectionString = myConnectionString;
@@ -52,6 +52,8 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
+                    var u = int.Parse(comboBox1.SelectedIndex.ToString());
+                    var o = u + 1;
                     if (textBox1.Text == "")
                     {
                         MessageBox.Show("Dont leave input blanks.", "Yep it exist. ",
@@ -61,7 +63,7 @@ namespace WindowsFormsApplication2
                     {
                         using (MySqlConnection con = new MySqlConnection(myConnectionString))
                         {
-                            using (MySqlCommand cmd = new MySqlCommand(" INSERT INTO `db`.`items` (`name`,`categoryID`,`tagID`,`stocks`,`isDeployable`,`isDamaged`,`isOnrepair`,`isRented`,`isDeployed`,`isDamagedBeyondRepair`,`description`) VALUES ('" + textBox1.Text + "'," + comboBox1.SelectedIndex + 1 + ",1,0,0,0,0,0,0,0,'" + textBox2.Text + "');", conn))
+                            using (MySqlCommand cmd = new MySqlCommand(" INSERT INTO `db`.`items` (`name`,`categoryID`,`tagID`,`stocks`,`isDeployable`,`isDamaged`,`isOnrepair`,`isRented`,`isDeployed`,`isDamagedBeyondRepair`,`description`) VALUES ('" + textBox1.Text + "'," + o + ",1,0,0,0,0,0,0,0,'" + textBox2.Text + "');", conn))
                             {
                                 cmd.CommandType = CommandType.Text;
                                 if (cmd.ExecuteNonQuery() > 0)
@@ -71,7 +73,8 @@ namespace WindowsFormsApplication2
 
             
                                     this.Close();
-                                    (System.Windows.Forms.Application.OpenForms["Form1"] as Form1).refreshni();
+                                    (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).refreshni();
+                                 
                                 }
                             }
                         }

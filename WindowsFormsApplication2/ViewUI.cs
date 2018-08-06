@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class Form3 : Form
+    public partial class ViewUI : Form
     {
-        public Form3()
+        public ViewUI()
         {
             InitializeComponent();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            var a = new Form4();
+            var a = new EditUI();
             a.Show();
         }
 
@@ -126,17 +126,16 @@ namespace WindowsFormsApplication2
         public string c;
         private void Form3_Load(object sender, EventArgs e)
         {
-            var a = new Form1();
+            var a = new EquipmentUI();
    
-            MessageBox.Show(Form1.sendtext, "Yep it exist. ",
-   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
 
             MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
             string myConnectionString;
 
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=;"
++ "pwd=root;"
 + "SslMode=none;"
 + "database=db";
 
@@ -145,7 +144,7 @@ namespace WindowsFormsApplication2
 
             using (MySqlConnection con = new MySqlConnection(myConnectionString))
             {
-                using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks,category.description,items.description,items.isDeployable,items.isDamaged,items.isOnrepair,items.isRented,items.isDeployed,items.isDamagedBeyondRepair FROM items left join category on items.categoryID = category.id where items.id =" + Form1.sendtext, conn))
+                using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks,category.description,items.description,items.isDeployable,items.isDamaged,items.isOnrepair,items.isRented,items.isDeployed,items.isDamagedBeyondRepair FROM items left join category on items.categoryID = category.id where items.id =" + EquipmentUI.sendtext, conn))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))

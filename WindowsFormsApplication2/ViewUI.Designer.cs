@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class Form3
+    partial class ViewUI
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             // dep
             // 
             this.dep.AutoSize = true;
-            this.dep.Location = new System.Drawing.Point(162, 293);
+            this.dep.Location = new System.Drawing.Point(162, 218);
             this.dep.Name = "dep";
             this.dep.Size = new System.Drawing.Size(35, 13);
             this.dep.TabIndex = 40;
@@ -86,7 +86,7 @@
             // 
             this.Label17.AutoSize = true;
             this.Label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label17.Location = new System.Drawing.Point(11, 293);
+            this.Label17.Location = new System.Drawing.Point(12, 218);
             this.Label17.Name = "Label17";
             this.Label17.Size = new System.Drawing.Size(55, 13);
             this.Label17.TabIndex = 38;
@@ -116,7 +116,7 @@
             // Label14
             // 
             this.Label14.AutoSize = true;
-            this.Label14.Location = new System.Drawing.Point(162, 216);
+            this.Label14.Location = new System.Drawing.Point(162, 293);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(35, 13);
             this.Label14.TabIndex = 35;
@@ -159,7 +159,7 @@
             // 
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label10.Location = new System.Drawing.Point(13, 216);
+            this.Label10.Location = new System.Drawing.Point(12, 293);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(56, 13);
             this.Label10.TabIndex = 31;

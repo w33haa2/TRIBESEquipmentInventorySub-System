@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class Form4
+    partial class EditUI
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,10 @@
             this.dbr.Name = "dbr";
             this.dbr.Size = new System.Drawing.Size(179, 20);
             this.dbr.TabIndex = 43;
+            this.dbr.TextChanged += new System.EventHandler(this.dbr_TextChanged);
+            this.dbr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onpress);
+            this.dbr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dbr_KeyPress);
+            this.dbr.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dbr_KeyUp);
             // 
             // Label4
             // 
@@ -69,6 +73,7 @@
             // 
             // dep
             // 
+            this.dep.Enabled = false;
             this.dep.Location = new System.Drawing.Point(104, 305);
             this.dep.Name = "dep";
             this.dep.ReadOnly = true;
@@ -144,11 +149,13 @@
             // 
             // TextBox4
             // 
+            this.TextBox4.Enabled = false;
             this.TextBox4.Location = new System.Drawing.Point(104, 182);
             this.TextBox4.Name = "TextBox4";
             this.TextBox4.ReadOnly = true;
             this.TextBox4.Size = new System.Drawing.Size(235, 20);
             this.TextBox4.TabIndex = 32;
+            this.TextBox4.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
             // 
             // Label9
             // 
@@ -165,6 +172,7 @@
             this.TextBox3.Name = "TextBox3";
             this.TextBox3.Size = new System.Drawing.Size(235, 20);
             this.TextBox3.TabIndex = 30;
+            this.TextBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // Label7
             // 
@@ -292,5 +300,6 @@
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.TextBox TextBox1;
+        
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 namespace WindowsFormsApplication2
 {
-    public partial class Form1 : Form
+    public partial class EquipmentUI : Form
     {
-        public Form1()
+        public EquipmentUI()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace WindowsFormsApplication2
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=;"
++ "pwd=root;"
 + "SslMode=none;"
 + "database=db";
 
@@ -41,11 +41,9 @@ namespace WindowsFormsApplication2
                 if (e.ColumnIndex == 0)
                 {
                    
-                    var a = new Form3();
+                    var a = new ViewUI();
                     sendtext = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    MessageBox.Show(sendtext, "Yep it's gone ",
-   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    
+           
                     a.Show();
                  
                 }
@@ -60,8 +58,7 @@ namespace WindowsFormsApplication2
                             cmd.CommandType = CommandType.Text;
                             if (cmd.ExecuteNonQuery() > 0 )
                             {
-                                MessageBox.Show("Deleted", "Yep it's gone ",
-   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                         
 
 
                                 using (MySqlConnection con1 = new MySqlConnection(myConnectionString))
@@ -110,10 +107,10 @@ namespace WindowsFormsApplication2
              string myConnectionString;
              myConnectionString = "server=127.0.0.1;"
  + "uid=root;"
- + "pwd=;"
+ + "pwd=root;"
  + "SslMode=none;"
  + "database=db";
-             var a = new Form1();
+             var a = new EquipmentUI();
              dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
              dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
              conn.ConnectionString = myConnectionString;
@@ -162,10 +159,10 @@ namespace WindowsFormsApplication2
              string myConnectionString;
              myConnectionString = "server=127.0.0.1;"
  + "uid=root;"
- + "pwd=;"
+ + "pwd=root;"
  + "SslMode=none;"
  + "database=db";
-             var a = new Form1();
+             var a = new EquipmentUI();
              dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
              dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
              conn.ConnectionString = myConnectionString;

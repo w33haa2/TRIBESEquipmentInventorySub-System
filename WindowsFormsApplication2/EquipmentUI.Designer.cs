@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class Form1
+    partial class EquipmentUI
     {
         /// <summary>
         /// Required designer variable.
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 456);
+            this.ClientSize = new System.Drawing.Size(736, 430);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.userControl11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

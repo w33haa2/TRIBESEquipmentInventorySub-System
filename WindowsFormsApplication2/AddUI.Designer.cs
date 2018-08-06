@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class Form2
+    partial class AddUI
     {
         /// <summary>
         /// Required designer variable.
