@@ -47,7 +47,7 @@ namespace WindowsFormsApplication2
                 myreader.Close();
                 if (i > 0)
                 {
-                    MessageBox.Show("Item already existed.", "Yep it exist. ",
+                    MessageBox.Show("Item already existed.", "Error. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication2
                     var o = u + 1;
                     if (textBox1.Text == "")
                     {
-                        MessageBox.Show("Dont leave input blanks.", "Yep it exist. ",
+                        MessageBox.Show("Dont leave input blanks.", "Error. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
@@ -68,12 +68,12 @@ namespace WindowsFormsApplication2
                                 cmd.CommandType = CommandType.Text;
                                 if (cmd.ExecuteNonQuery() > 0)
                                 {
-                                    MessageBox.Show("Successfully added to database.", "Yep it exist. ",
+                                    MessageBox.Show("Successfully added to database.", "Successful. ",
    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             
                                     this.Close();
-                                    (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).refreshni();
+                                    (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).refreshni();
                                  
                                 }
                             }

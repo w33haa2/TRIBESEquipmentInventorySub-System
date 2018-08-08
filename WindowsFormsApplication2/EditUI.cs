@@ -20,16 +20,16 @@ namespace WindowsFormsApplication2
         private void Form4_Load(object sender, EventArgs e)
         {
           
-            TextBox1.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label2.Text;
-           ComboBox1.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label4.Text;
-           TextBox2.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label6.Text;
-           TextBox3.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label8.Text;
-           TextBox4.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label13.Text;
-           TextBox5.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label14.Text;
-           TextBox6.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label15.Text;
-           TextBox7.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Label16.Text;
-           dep.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).dep.Text;
-           dbr.Text = (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).dbr.Text;
+            TextBox1.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label2.Text;
+           ComboBox1.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label4.Text;
+           TextBox2.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label6.Text;
+           TextBox3.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label8.Text;
+           TextBox4.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label13.Text;
+           TextBox5.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label14.Text;
+           TextBox6.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label15.Text;
+           TextBox7.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Label16.Text;
+           dep.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).dep.Text;
+           dbr.Text = (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).dbr.Text;
             u = TextBox4.Text;
         }
 
@@ -57,7 +57,7 @@ namespace WindowsFormsApplication2
            
                 if (TextBox1.Text == "")
                 {
-                    MessageBox.Show("Dont leave name blank.", "Yep it exist. ",
+                    MessageBox.Show("Dont leave name blank.", "Error. ",
 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
@@ -69,12 +69,12 @@ MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             cmd.CommandType = CommandType.Text;
                             if (cmd.ExecuteNonQuery() > 0)
                             {
-                                MessageBox.Show("Successfully updated to database.", "Yep it exist. ",
+                                MessageBox.Show("Successfully updated to database.", "Successful. ",
 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                                (System.Windows.Forms.Application.OpenForms["Form3"] as ViewUI).Close();
+                                (System.Windows.Forms.Application.OpenForms["ViewUI"] as ViewUI).Close();
                                 this.Close();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).refreshni();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).refreshni();
                             }
                         }
                     }

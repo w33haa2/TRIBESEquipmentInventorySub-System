@@ -38,6 +38,7 @@ namespace WindowsFormsApplication2
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
                 {
                     using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks FROM items ", conn))
+
                     {
                         cmd.CommandType = CommandType.Text;
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -45,7 +46,7 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                             
+
                                 a.dataGridView1.DataSource = dt;
                                 a.dataGridView1.ReadOnly = false;
                                 a.dataGridView1.ClearSelection();
@@ -116,8 +117,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -130,25 +131,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -167,8 +168,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -181,26 +182,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -228,8 +229,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -242,26 +243,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
 
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -290,8 +291,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -304,26 +305,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
 
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -352,8 +353,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 using (MySqlConnection con = new MySqlConnection(myConnectionString))
@@ -366,26 +367,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
 
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -428,8 +429,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                
@@ -443,25 +444,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -483,8 +484,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -498,25 +499,25 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -535,8 +536,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -550,26 +551,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -590,8 +591,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -605,26 +606,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -658,8 +659,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -673,26 +674,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -712,8 +713,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -727,26 +728,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -765,8 +766,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -780,26 +781,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }
@@ -820,8 +821,8 @@ namespace WindowsFormsApplication2
         + "SslMode=none;"
         + "database=db";
 
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
-                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionBackColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.BackColor;
+                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.SelectionForeColor = (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DefaultCellStyle.ForeColor;
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
@@ -835,26 +836,26 @@ namespace WindowsFormsApplication2
                             using (DataTable dt = new DataTable())
                             {
                                 sda.Fill(dt);
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.DataSource = dt;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ReadOnly = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.ClearSelection();
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                (System.Windows.Forms.Application.OpenForms["Form1"] as EquipmentUI).dataGridView1.Refresh();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.DataSource = dt;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ReadOnly = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.ClearSelection();
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[2].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[5].Visible = false;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].HeaderCell.Value = "Name";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[1].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].HeaderCell.Value = "";
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[0].Width = 50;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                (System.Windows.Forms.Application.OpenForms["EquipmentUI"] as EquipmentUI).dataGridView1.Refresh();
                             }
                         }
                     }

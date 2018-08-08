@@ -75,6 +75,7 @@
             // 
             this.Label18.AutoSize = true;
             this.Label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label18.Location = new System.Drawing.Point(12, 316);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(129, 13);
@@ -86,6 +87,7 @@
             // 
             this.Label17.AutoSize = true;
             this.Label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label17.Location = new System.Drawing.Point(12, 218);
             this.Label17.Name = "Label17";
             this.Label17.Size = new System.Drawing.Size(55, 13);
@@ -137,6 +139,7 @@
             // 
             this.Label12.AutoSize = true;
             this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label12.Location = new System.Drawing.Point(12, 265);
             this.Label12.Name = "Label12";
             this.Label12.Size = new System.Drawing.Size(45, 13);
@@ -159,6 +162,7 @@
             // 
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label10.Location = new System.Drawing.Point(12, 293);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(56, 13);
@@ -170,6 +174,7 @@
             // 
             this.Label9.AutoSize = true;
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label9.Location = new System.Drawing.Point(11, 192);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(63, 13);
@@ -179,12 +184,13 @@
             // 
             // Button1
             // 
+            this.Button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Button1.Location = new System.Drawing.Point(277, 396);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(75, 23);
             this.Button1.TabIndex = 29;
-            this.Button1.Text = "Edit";
-            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Text = "EDIT";
+            this.Button1.UseVisualStyleBackColor = false;
             this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Label8
@@ -201,6 +207,7 @@
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label7.Location = new System.Drawing.Point(12, 134);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(38, 13);
@@ -222,6 +229,7 @@
             // 
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label5.Location = new System.Drawing.Point(11, 107);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(42, 13);
@@ -243,6 +251,7 @@
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label3.Location = new System.Drawing.Point(10, 78);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(52, 13);
@@ -264,6 +273,7 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label1.Location = new System.Drawing.Point(13, 49);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(38, 13);
@@ -271,10 +281,11 @@
             this.Label1.Text = "Name:";
             this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // Form3
+            // ViewUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(364, 431);
             this.Controls.Add(this.dbr);
             this.Controls.Add(this.dep);
@@ -297,10 +308,11 @@
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form3";
+            this.Name = "ViewUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "View";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

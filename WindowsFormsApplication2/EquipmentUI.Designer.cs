@@ -49,7 +49,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(608, 359);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -73,21 +73,22 @@
             // 
             // userControl11
             // 
-            this.userControl11.Location = new System.Drawing.Point(-2, -4);
+            this.userControl11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userControl11.Location = new System.Drawing.Point(-11, 1);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(717, 448);
+            this.userControl11.Size = new System.Drawing.Size(765, 444);
             this.userControl11.TabIndex = 9;
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load_1);
             // 
-            // Form1
+            // EquipmentUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(736, 430);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.userControl11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.Name = "EquipmentUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TRIBES v.1.04";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -101,7 +102,7 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        public UserControl1 userControl11;
+        private UserControl1 userControl11;
     }
 }
 

@@ -79,7 +79,7 @@ namespace WindowsFormsApplication2
                                                 dataGridView1.Columns[3].HeaderCell.Value = "Name";
                                                 dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                                                 dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                                dataGridView1.Columns[4].HeaderCell.Value = "Stock";
+                                                dataGridView1.Columns[4].HeaderCell.Value = "Stocks";
                                                 dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                                                 dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                                                 dataGridView1.Columns[1].HeaderCell.Value = "";
@@ -89,6 +89,8 @@ namespace WindowsFormsApplication2
                                                 dataGridView1.Columns[0].Width = 50;
                                                 dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                                                 dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                                                MessageBox.Show("Data Deleted!", "Successful ",
+MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             }
                                         }
                                     }

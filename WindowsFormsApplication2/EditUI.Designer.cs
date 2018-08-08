@@ -65,6 +65,7 @@
             // Label4
             // 
             this.Label4.AutoSize = true;
+            this.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label4.Location = new System.Drawing.Point(28, 334);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(126, 13);
@@ -83,6 +84,7 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
+            this.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label2.Location = new System.Drawing.Point(28, 305);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(52, 13);
@@ -106,6 +108,7 @@
             // Label12
             // 
             this.Label12.AutoSize = true;
+            this.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label12.Location = new System.Drawing.Point(28, 279);
             this.Label12.Name = "Label12";
             this.Label12.Size = new System.Drawing.Size(42, 13);
@@ -115,6 +118,7 @@
             // Label11
             // 
             this.Label11.AutoSize = true;
+            this.Label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label11.Location = new System.Drawing.Point(28, 251);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(50, 13);
@@ -123,12 +127,14 @@
             // 
             // Button1
             // 
+            this.Button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button1.Location = new System.Drawing.Point(130, 372);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(116, 30);
             this.Button1.TabIndex = 35;
-            this.Button1.Text = "Save";
-            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Text = "SAVE";
+            this.Button1.UseVisualStyleBackColor = false;
             this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // TextBox5
@@ -141,6 +147,7 @@
             // Label10
             // 
             this.Label10.AutoSize = true;
+            this.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label10.Location = new System.Drawing.Point(26, 220);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(56, 13);
@@ -160,6 +167,7 @@
             // Label9
             // 
             this.Label9.AutoSize = true;
+            this.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label9.Location = new System.Drawing.Point(26, 185);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(63, 13);
@@ -177,6 +185,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
+            this.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label7.Location = new System.Drawing.Point(26, 139);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(38, 13);
@@ -193,6 +202,7 @@
             // Label5
             // 
             this.Label5.AutoSize = true;
+            this.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label5.Location = new System.Drawing.Point(26, 109);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(42, 13);
@@ -219,6 +229,7 @@
             // Label3
             // 
             this.Label3.AutoSize = true;
+            this.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label3.Location = new System.Drawing.Point(26, 76);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(52, 13);
@@ -228,6 +239,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
+            this.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Label1.Location = new System.Drawing.Point(26, 44);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(38, 13);
@@ -241,10 +253,11 @@
             this.TextBox1.Size = new System.Drawing.Size(235, 20);
             this.TextBox1.TabIndex = 23;
             // 
-            // Form4
+            // EditUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(382, 414);
             this.Controls.Add(this.dbr);
             this.Controls.Add(this.Label4);
@@ -267,8 +280,9 @@
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.TextBox1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form4";
+            this.Name = "EditUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Item Details";
             this.Load += new System.EventHandler(this.Form4_Load);
