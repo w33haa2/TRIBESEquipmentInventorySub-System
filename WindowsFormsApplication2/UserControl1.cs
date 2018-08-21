@@ -20,60 +20,7 @@ namespace WindowsFormsApplication2
         }
        
 
-        public void refresh()
-        {
-            
-                MySql.Data.MySqlClient.MySqlConnection conn = new MySqlConnection();
-                string myConnectionString;
-                myConnectionString = "server=127.0.0.1;"
-    + "uid=root;"
-    + "pwd=root;"
-    + "SslMode=none;"
-    + "database=db";
-                var a = new EquipmentUI();
-                a.dataGridView1.DefaultCellStyle.SelectionBackColor = a.dataGridView1.DefaultCellStyle.BackColor;
-                a.dataGridView1.DefaultCellStyle.SelectionForeColor = a.dataGridView1.DefaultCellStyle.ForeColor;
-                conn.ConnectionString = myConnectionString;
-                conn.Open();
-                using (MySqlConnection con = new MySqlConnection(myConnectionString))
-                {
-                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("SELECT items.id,items.name,items.stocks FROM items ", conn))
-
-                    {
-                        cmd.CommandType = CommandType.Text;
-                        using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
-                        {
-                            using (DataTable dt = new DataTable())
-                            {
-                                sda.Fill(dt);
-
-                                a.dataGridView1.DataSource = dt;
-                                a.dataGridView1.ReadOnly = false;
-                                a.dataGridView1.ClearSelection();
-                                a.dataGridView1.Columns[2].Visible = false;
-                                a.dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[3].HeaderCell.Value = "Name";
-                                a.dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[4].HeaderCell.Value = "Stock";
-                                a.dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[1].HeaderCell.Value = "";
-                                a.dataGridView1.Columns[1].Width = 50;
-                                a.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                a.dataGridView1.Columns[0].HeaderCell.Value = "";
-                                a.dataGridView1.Columns[0].Width = 50;
-                                a.dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                a.dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                                a.dataGridView1.Refresh();
-                            }
-                        }
-                    }
-                }
-
-
-            
-        }
+    
 
   
 

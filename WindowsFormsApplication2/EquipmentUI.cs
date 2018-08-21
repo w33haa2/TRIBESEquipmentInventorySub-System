@@ -208,7 +208,12 @@ MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
          {
 
          }
+
+        private void userControl11_Load_2(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 
 
